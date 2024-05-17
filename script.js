@@ -4,23 +4,13 @@ const NUMBER_OF_SQUARES = 16;
 
 const containers = [];
 
-for(let i = 0; i < NUMBER_OF_SQUARES; i++)
-{
-    containers.push(document.createElement("div"));
-    containers[i].style.display = "flex";
-    bigContainer.appendChild(containers[i]);
-}
-
-
-
-
-
 bigCWidth = document.getElementById("bigContainer").clientWidth;
 bigCHeight = document.getElementById("bigContainer").clientHeight;
 
 
 divWidth = bigCWidth / NUMBER_OF_SQUARES;
 divHeight = bigCHeight / NUMBER_OF_SQUARES;
+
 
 function createRow()
 {
@@ -40,7 +30,26 @@ function createRow()
         }
 }
 
-for(let i = 0; i < NUMBER_OF_SQUARES; i++)
+function createGrid()
 {
-    createRow();
+    for(let i = 0; i < NUMBER_OF_SQUARES; i++)
+        {
+            containers.push(document.createElement("div"));
+            containers[i].style.display = "flex";
+            bigContainer.appendChild(containers[i]);
+            
+        }
+    for(let i = 0; i < NUMBER_OF_SQUARES; i++)
+    {
+        createRow();
+    }    
 }
+
+createGrid();
+
+
+
+
+
+
+
